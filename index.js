@@ -78,7 +78,7 @@ const sendContactForm = (params, cb) => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post('/contact', (req, res) => {
+app.post('/form', (req, res) => {
   console.log(`Connection! ${Date.now()}`)
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
