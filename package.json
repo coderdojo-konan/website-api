@@ -10,6 +10,9 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },
+  "scripts": {
+    "start": "node index.js"
+  },
   "description": "API for Website which plays a role in such as form sending.",
   "repository": "git@github.com:coderdojo-konan/website-api.git"
 }
