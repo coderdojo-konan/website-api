@@ -6,7 +6,7 @@ on:
     - master
 
 jobs:
-  release:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -15,10 +15,10 @@ jobs:
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       with:
-        args: login
+        args: container:login
     - name: push
       uses: actions/heroku@master
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       with:
-        args: push -a coderdojo-konan-website-api
+        args: container:push -a coderdojo-konan-website-api
