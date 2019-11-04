@@ -3,6 +3,8 @@ const app = express()
 const request = require('request')
 const bodyParser = require('body-parser')
 
+const PORT = process.env.PORT || 8080
+
 const slackClient = (url, data, cb) => {
   const options = {
     json: true,
@@ -96,4 +98,4 @@ app.post('/form', (req, res) => {
 
 
 
-app.listen(8080, () => console.log('App listening on port 8080!'))
+app.listen(PORT, () => console.log(`App listening on port ${ PORT }!`))
