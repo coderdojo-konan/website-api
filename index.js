@@ -2,8 +2,12 @@ const express = require('express')
 const app = express()
 const request = require('request')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
-const PORT = process.env.PORT || 8080
+
+const PORT = process.env.PORT || 3000
+
+app.use(cors())
 
 const slackClient = (url, data, cb) => {
   const options = {
@@ -81,10 +85,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post('/form', (req, res) => {
-  console.log(`Connection! ${Date.now()}`)
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
   console.log(req.body)
 
   sendContactForm(req.body, result => {
