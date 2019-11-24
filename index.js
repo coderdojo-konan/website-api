@@ -77,6 +77,8 @@ const sendContactForm = (params, cb) => {
       }
     
       slackClient(process.env.SLACK_WEBHOOK_URL, body, cb)
+    } else {
+      cb("reCAPTCHA hasn't passed.")
     }
   })
 }
@@ -91,7 +93,7 @@ app.post('/form', (req, res) => {
     if(result === 'ok') {
       res.send('success')
     } else {
-      res.send('error')
+      res.send(result)
     }
   })
 })
