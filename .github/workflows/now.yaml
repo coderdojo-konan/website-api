@@ -20,7 +20,6 @@ jobs:
           zeit-token: ${{ secrets.ZEIT_TOKEN }}
           now-org-id: ${{ secrets.ORG_ID }}
           now-project-id: ${{ secrets.PROJECT_ID }}
-          working-directory: .
       - uses: ./
         id: now-deployment-production
         if: github.event_name == 'push'
@@ -30,4 +29,3 @@ jobs:
           now-org-id: ${{ secrets.ORG_ID }}
           now-project-id: ${{ secrets.PROJECT_ID }}
           now-args: '--prod'
-          working-directory: .
