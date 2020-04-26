@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./
+      - uses: amondnet/now-deployment@v2
         id: now-deployment-staging
         if: github.event_name == 'pull_request'
         with:
@@ -20,7 +20,7 @@ jobs:
           zeit-token: ${{ secrets.ZEIT_TOKEN }}
           now-org-id: ${{ secrets.ORG_ID }}
           now-project-id: ${{ secrets.PROJECT_ID }}
-      - uses: ./
+      - uses: amondnet/now-deployment@v2
         id: now-deployment-production
         if: github.event_name == 'push'
         with:
