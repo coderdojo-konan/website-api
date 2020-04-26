@@ -98,6 +98,10 @@ app.post('/form', (req, res) => {
   })
 })
 
+app.get('/test', (_req, res) => {
+  res.send('success')
+})
+
 
 
 app.listen(PORT, () => console.log(`App listening on port ${ PORT }!`))
