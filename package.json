@@ -12,8 +12,11 @@
     "request-promise": "^4.2.4"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "now dev"
   },
   "description": "API for Website which plays a role in such as form sending.",
-  "repository": "git@github.com:coderdojo-konan/website-api.git"
+  "repository": "git@github.com:coderdojo-konan/website-api.git",
+  "devDependencies": {
+    "now": "^18.0.0"
+  }
 }
